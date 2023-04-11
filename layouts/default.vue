@@ -25,21 +25,35 @@
       >
         <q-list>
           <q-item-label header>Essential Links</q-item-label>
-          <q-item clickable target="_blank" rel="noopener" href="https://quasar.dev">
+          <NuxtLink to="/" style="text-decoration: none;">
+            <q-item active active-class="bg-teal-1 text-orange">
             <q-item-section avatar>
-              <q-icon name="school" />
+              <q-icon name="home" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>Docs</q-item-label>
-              <q-item-label caption>https://quasar.dev</q-item-label>
+              <q-item-label>Home</q-item-label>
+              <q-item-label caption class="text-orange">Dashboard</q-item-label>
             </q-item-section>
           </q-item>
-          <q-item clickable target="_blank" rel="noopener" href="https://github.quasar.dev">
+          </NuxtLink>
+          <NuxtLink to="profile" style="text-decoration: none;">
+            <q-item >
             <q-item-section avatar>
               <q-icon name="code" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>GitHub</q-item-label>
+              <q-item-label>User Profile</q-item-label>
+              <q-item-label caption>User</q-item-label>
+            </q-item-section>
+          </q-item>
+          </NuxtLink>
+          
+          <q-item clickable rel="noopener" href="/profile">
+            <q-item-section avatar>
+              <q-icon name="code" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>User Profile</q-item-label>
               <q-item-label caption>github.com/quasarframework</q-item-label>
             </q-item-section>
           </q-item>
@@ -83,7 +97,7 @@
       </q-drawer>
   
       <q-page-container>
-        <router-view />
+            <slot/>
       </q-page-container>
     </q-layout>
   </template>
@@ -92,7 +106,7 @@
   import { ref } from 'vue'
   
   export default {
-    name: 'MyLayout',
+    name: 'DefaultLayout',
   
     setup () {
       const leftDrawerOpen = ref(false)
