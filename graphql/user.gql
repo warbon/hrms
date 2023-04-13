@@ -1,0 +1,65 @@
+
+mutation loginUser (
+    $email: String!
+    $password: String!
+    $deviceId: String!
+  ) {
+    loginUser (
+      email: $email
+      password: $password
+      deviceId: $deviceId
+    ) {
+      token
+      user {
+        id
+        name
+        email
+      }
+    }
+}
+
+mutation CreateUser($name: String!, $email: String!, $password: String!, $password_confirmation: String!) {
+  createUser(
+    input: {
+      name: $name, 
+      email: $email, 
+      password: $password, 
+      password_confirmation: $password_confirmation
+    }) 
+    {
+      email
+      name
+    }
+}
+
+
+query GetUser($id: ID!) {
+  user(id: $id) {
+    id
+    name
+    email
+  }
+}
+
+query GetUsers {
+  users {
+    data {
+      createdAt
+      email
+      emailVerifiedAt
+      id
+      name
+      updatedAt
+    }
+    paginatorInfo {
+      count
+      currentPage
+      firstItem
+      hasMorePages
+      lastItem
+      lastPage
+      perPage
+      total
+    }
+  }
+}

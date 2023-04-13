@@ -47,6 +47,18 @@
             </q-item-section>
           </q-item>
           </NuxtLink>
+
+          <NuxtLink to="SignIn" style="text-decoration: none;">
+            <q-item >
+            <q-item-section avatar>
+              <q-icon name="code" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Sign In</q-item-label>
+              <q-item-label caption>Sign Page</q-item-label>
+            </q-item-section>
+          </q-item>
+          </NuxtLink>
           
           <q-item clickable rel="noopener" href="/profile">
             <q-item-section avatar>

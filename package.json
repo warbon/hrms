@@ -9,11 +9,16 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/apollo": "^5.0.0-alpha.6",
     "nuxt": "^3.3.3",
     "nuxt-quasar-ui": "^1.6.0"
   },
   "dependencies": {
+    "@pinia-orm/nuxt": "^1.6.7",
+    "@pinia/nuxt": "^0.4.8",
     "@quasar/extras": "^1.16.2",
+    "pinia": "^2.0.34",
+    "pinia-orm": "^1.6.7",
     "quasar": "^2.11.10"
   }
 }
