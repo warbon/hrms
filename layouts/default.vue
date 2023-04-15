@@ -1,6 +1,6 @@
 <template>
     <q-layout view="lHh Lpr lFf" class="bg-white">
-      <q-header>
+      <q-header elevated>
         <q-toolbar class="bg-positive">
           <q-btn
             flat
@@ -21,7 +21,7 @@
         v-model="leftDrawerOpen"
         show-if-above
         bordered
-        class="bg-grey-2"
+        
       >
 
       <q-img class="absolute-top"  style="height: 150px; background: linear-gradient(to bottom, #21BA45, #1976d2);">
@@ -99,7 +99,7 @@
       </q-scroll-area>
       </q-drawer>
   
-      <q-page-container>
+      <q-page-container class="bg-grey-2">
             <slot/>
       </q-page-container>
     </q-layout>
