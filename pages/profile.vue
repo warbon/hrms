@@ -1,5 +1,8 @@
 <template>
-  <div>User Profile</div>
+  <q-page padding>
+    <div>User Profile</div>
+  </q-page>
+
 </template>
 
 <script>

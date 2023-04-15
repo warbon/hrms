@@ -1,5 +1,8 @@
 <template>
-  <div>Home Page</div>
+  <q-page padding>
+    <div>Dashboad</div>
+  </q-page>
+
 </template>
 
 <script>
