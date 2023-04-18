@@ -12,6 +12,12 @@ const menuList = [
     separator: false
   },
   {
+    icon: 'o_insights',
+    label: 'Analytics',
+    to: 'Analytics',
+    separator: false
+  },
+  {
     icon: 'people_outline',
     label: 'User Management',
     to: 'Users',
@@ -32,7 +38,7 @@ const menuList = [
   {
     icon: 'settings',
     label: 'Settings',
-    to: '/',
+    to: 'Settings',
     separator: false
   }
 ]

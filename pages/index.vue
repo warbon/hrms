@@ -1,7 +1,11 @@
 <template>
   <q-page padding>
-    <div class="text-h5">Dashboard</div>
-    <QCard flat bordered class="q-mt-xl" style="border-radius:15px;">
+    <div class="q-gutter-sm q-pl-sm">
+      <div class="text-h4">Hello, Elon Musk!</div>
+      <div class="text-h5 text-grey-14">Dashboard</div>
+    </div>
+
+    <QCard flat bordered class="q-mt-lg" style="border-radius:15px;">
       <q-card-actions align="right">
           <q-btn round flat color="positive" icon="chevron_left" />
           <q-chip outline size="md" color="positive" text-color="white">

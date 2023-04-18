@@ -1,7 +1,7 @@
 <template>
     <q-page padding>
         <div class="q-gutter-sm q-pl-sm">
-            <div class="text-h5 text-grey-14">Settings</div>
+            <div class="text-h5 text-grey-14">Analytics</div>
         </div>
     </q-page>
 </template>

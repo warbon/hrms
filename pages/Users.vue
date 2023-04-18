@@ -1,6 +1,6 @@
 <template>
     <q-page padding>
-      <div class="text-h5">User Management</div>
+      <div class="text-h5 text-grey-14">User Management</div>
       <user-list/>
     </q-page>
   
