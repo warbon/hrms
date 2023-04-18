@@ -1,5 +1,5 @@
 <template>
-      <q-card flat bordered :class="`${backgroundColor} ${textColor}`" >
+      <q-card flat bordered :class="`${backgroundColor} ${textColor}`" style="height: 100px;" >
         <q-card-section horizontal>
           <q-card-section class="text-white">
             <q-icon size="xl" :name="icon"/>
@@ -41,5 +41,11 @@ const props = defineProps({
   },
 })
 
-
 </script>
+
+
+
+<!-- <style lang="sass" scoped>
+.my-card
+  height: 500px
+</style> -->

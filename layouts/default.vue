@@ -18,6 +18,39 @@ const menuList = [
     separator: false
   },
   {
+    icon: 'o_badge',
+    label: 'Employee Management',
+    to: 'Users',
+    separator: false
+  },
+  {
+    icon: 'o_punch_clock',
+    label: 'Time and Attendance',
+    to: 'Users',
+    separator: false
+  },
+  {
+    icon: 'o_account_balance_wallet',
+    label: 'Payroll Management',
+    to: 'Users',
+    separator: false,
+    subMenu: [
+      {
+        icon: 'o_account_balance_wallet',
+        label: 'Generate Payroll',
+        to: 'Users',
+        separator: false,
+      }
+    ],
+    expanded: true
+  },
+  {
+    icon: 'o_calendar_month',
+    label: 'Calendar',
+    to: 'Users',
+    separator: true
+  },
+  {
     icon: 'people_outline',
     label: 'User Management',
     to: 'Users',
@@ -30,15 +63,15 @@ const menuList = [
     separator: false
   },
   {
-    icon: 'login',
-    label: 'Sign In',
-    to: 'SignIn',
-    separator: true
-  },
-  {
     icon: 'settings',
     label: 'Settings',
     to: 'Settings',
+    separator: false
+  },
+  {
+    icon: 'login',
+    label: 'Sign Out',
+    to: 'SignIn',
     separator: false
   }
 ]
@@ -52,33 +85,33 @@ function toggleLeftDrawer() {
 
 <template>
   <q-layout view="lHh Lpr lFf" class="bg-white">
-  <q-header>
-    <q-toolbar class="bg-positive">
-      <q-btn flat dense round @click="toggleLeftDrawer" icon="menu" />
+    <q-header>
+      <q-toolbar class="bg-positive">
+        <q-btn flat dense round @click="toggleLeftDrawer" icon="menu" />
 
-      <q-toolbar-title>
-        HR Management Solution
-      </q-toolbar-title>
-    </q-toolbar>
-  </q-header>
+        <q-toolbar-title>
+          HR Management Solution
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
 
-  <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
 
-    <q-scroll-area style="height: calc(100% - 175px); margin-top: 175px;">
-      <q-list padding>
-        <!-- <q-item-label header>Essential Links</q-item-label> -->
+      <q-scroll-area style="height: calc(100% - 175px); margin-top: 175px;">
+        <q-list padding>
+          <!-- <q-item-label header>Essential Links</q-item-label> -->
 
-        <template v-for="(menuItem, index) in menuList" :key="index">
-          <NuxtLink :to="menuItem.to" style="text-decoration: none;">
-            <q-item clickable class="text-positive" active-class="text-bold text-blue-10">
-              <q-item-section avatar>
-                <q-icon :name="menuItem.icon" />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ menuItem.label }}</q-item-label>
-              </q-item-section>
+          <template v-for="(menuItem, index) in menuList" :key="index">
+            <NuxtLink :to="menuItem.to" style="text-decoration: none;">
+              <q-item clickable class="text-positive" active-class="text-bold text-blue-10">
+                <q-item-section avatar>
+                  <q-icon :name="menuItem.icon" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>{{ menuItem.label }}</q-item-label>
+                </q-item-section>
               </q-item>
-              <q-separator :key="'sep' + index"  v-if="menuItem.separator" />
+              <q-separator :key="'sep' + index" v-if="menuItem.separator" />
             </NuxtLink>
           </template>
 

@@ -7,11 +7,11 @@
 
     <QCard flat bordered class="q-mt-lg" style="border-radius:15px;">
       <q-card-actions align="right">
-          <q-btn round flat color="positive" icon="chevron_left" />
-          <q-chip outline size="md" color="positive" text-color="white">
-            2023
-          </q-chip>
-          <q-btn round flat color="positive" icon="chevron_right" />
+        <q-btn round flat color="positive" icon="chevron_left" />
+        <q-chip outline size="md" color="positive" text-color="white">
+          2023
+        </q-chip>
+        <q-btn round flat color="positive" icon="chevron_right" />
       </q-card-actions>
 
       <q-card-section class="q-pt-none q-pb-lg">
@@ -25,6 +25,17 @@
         </div>
       </q-card-section>
     </QCard>
+
+    <div class="row q-mt-md">
+      <div  class=" col-8">
+          <MembersWidget />
+          <SeparatedMembers />
+      </div>
+      <div class=" col-4 q-px-sm">
+        
+      </div>
+    </div>
+
 
   </q-page>
 </template>
