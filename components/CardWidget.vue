@@ -1,15 +1,15 @@
 <template>
-      <q-card class="my-card" flat bordered>
+      <q-card flat bordered :class="`${backgroundColor} ${textColor}`" >
         <q-card-section horizontal>
-          <q-card-section :class="iconBackgound" class="text-white">
+          <q-card-section class="text-white">
             <q-icon size="xl" :name="icon"/>
           </q-card-section>
   
-          <q-separator vertical />
+          <!-- <q-separator vertical /> -->
   
           <q-card-section>
-            <div class="text-h5">{{ title }}</div>
-            <div class="text-subtitle2 text-grey">{{ subtitle }}</div>
+            <div class="text-h5 text-bold">{{ title }}</div>
+            <div class="text-caption" >{{ subtitle }}</div>
           </q-card-section>
         
         </q-card-section>
@@ -31,7 +31,11 @@ const props = defineProps({
     type: String,
     //required: true,
   },
-  iconBackgound: {
+  backgroundColor: {
+    type: String,
+    //required: true,
+  },
+  textColor: {
     type: String,
     //required: true,
   },
