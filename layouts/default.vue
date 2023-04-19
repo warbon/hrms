@@ -9,25 +9,33 @@ const menuList = [
     icon: 'o_dashboard',
     label: 'Dashboard',
     to: '/',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'o_insights',
     label: 'Analytics',
     to: 'Analytics',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'o_badge',
     label: 'Employee Management',
     to: 'Users',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'o_punch_clock',
     label: 'Time and Attendance',
     to: 'Users',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'o_account_balance_wallet',
@@ -40,6 +48,18 @@ const menuList = [
         label: 'Generate Payroll',
         to: 'Users',
         separator: false,
+      },
+      {
+        icon: 'o_account_balance_wallet',
+        label: 'Loans',
+        to: 'Users',
+        separator: false,
+      },
+      {
+        icon: 'o_account_balance_wallet',
+        label: 'Government Contributions',
+        to: 'Users',
+        separator: false,
       }
     ],
     expanded: true
@@ -48,31 +68,41 @@ const menuList = [
     icon: 'o_calendar_month',
     label: 'Calendar',
     to: 'Users',
-    separator: true
+    separator: true,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'people_outline',
     label: 'User Management',
     to: 'Users',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'portrait',
     label: 'User Profile',
     to: 'Profile',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'settings',
     label: 'Settings',
     to: 'Settings',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   },
   {
     icon: 'login',
     label: 'Sign Out',
     to: 'SignIn',
-    separator: false
+    separator: false,
+    subMenu: [],
+    expanded: false
   }
 ]
 
@@ -102,17 +132,37 @@ function toggleLeftDrawer() {
           <!-- <q-item-label header>Essential Links</q-item-label> -->
 
           <template v-for="(menuItem, index) in menuList" :key="index">
-            <NuxtLink :to="menuItem.to" style="text-decoration: none;">
-              <q-item clickable class="text-positive" active-class="text-bold text-blue-10">
-                <q-item-section avatar>
-                  <q-icon :name="menuItem.icon" />
-                </q-item-section>
-                <q-item-section>
-                  <q-item-label>{{ menuItem.label }}</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-separator :key="'sep' + index" v-if="menuItem.separator" />
-            </NuxtLink>
+            <template v-if="menuItem.subMenu.length == 0">
+              <NuxtLink :to="menuItem.to" style="text-decoration: none;">
+                <q-item clickable class="text-positive" active-class="text-bold text-blue-10">
+                  <q-item-section avatar>
+                    <q-icon :name="menuItem.icon" />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label>{{ menuItem.label }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-separator :key="'sep' + index" v-if="menuItem.separator" />
+              </NuxtLink>
+            </template>
+            <template v-else>
+              <q-expansion-item expand-separator :icon="menuItem.icon" :label="menuItem.label" class="text-positive">
+                <template v-for="(subItem, index) in menuItem.subMenu" :key="index">
+                  <NuxtLink :to="subItem.to" style="text-decoration: none;">
+                    <q-item dense clickable class="text-positive q-pl-xl q-ml-lg" active-class="text-bold text-blue-10">
+                      <!-- <q-item-section avatar>
+                        <q-icon :name="subItem.icon" />
+                      </q-item-section> -->
+                      <q-item-section>
+                        <q-item-label>{{ subItem.label }}</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                    <q-separator :key="'sep' + index" v-if="menuItem.separator" />
+                  </NuxtLink>
+                </template>
+              </q-expansion-item>
+            </template>
+
           </template>
 
         </q-list>
