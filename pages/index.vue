@@ -5,10 +5,20 @@
       <div class="text-h5 text-grey-14">Dashboard</div>
     </div>
 
-    <QCard flat bordered class="q-mt-lg" style="border-radius:15px;">
+    <div class="row q-mt-xs">
+      <div class=" col-4 q-px-sm">
+        <WidgetsTimeCard />
+      </div>
+      <div  class=" col-8">
+        <WidgetsAnnouncements />
+      </div>
+     
+    </div>
+
+    <QCard flat bordered class="q-mt-md" style="border-radius:15px;">
       <q-card-actions align="right">
         <q-btn round flat color="positive" icon="chevron_left" />
-        <q-chip outline size="md" color="positive" text-color="white">
+        <q-chip outline size="md" color="positive" text-color="white" class="q-px-lg">
           2023
         </q-chip>
         <q-btn round flat color="positive" icon="chevron_right" />
@@ -32,7 +42,7 @@
           <SeparatedMembers />
       </div>
       <div class=" col-4 q-px-sm">
-        
+          <WidgetsDailyQoute />
       </div>
     </div>
 
